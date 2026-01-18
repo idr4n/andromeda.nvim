@@ -1,0 +1,90 @@
+---@class Palette
+---@field none string
+---@field bg string
+---@field bg_highlight string
+---@field bg_visual string
+---@field bg_search string
+---@field fg_dark string
+---@field fg_gutter string
+---@field fg string
+---@field cyan string
+---@field pink string
+---@field purple string
+---@field orange string
+---@field yellow string
+---@field magenta string
+---@field blue string
+---@field red string
+---@field green string
+---@field error string
+---@field warning string
+---@field info string
+---@field hint string
+---@field git_add string
+---@field git_change string
+---@field git_delete string
+
+---@class TerminalColors
+---@field black string
+---@field black_bright string
+---@field red string
+---@field red_bright string
+---@field green string
+---@field green_bright string
+---@field yellow string
+---@field yellow_bright string
+---@field blue string
+---@field blue_bright string
+---@field magenta string
+---@field magenta_bright string
+---@field cyan string
+---@field cyan_bright string
+---@field white string
+---@field white_bright string
+
+---@class GitColors
+---@field add string
+---@field change string
+---@field delete string
+---@field ignore string
+
+---@class DiffColors
+---@field add string
+---@field delete string
+---@field change string
+---@field text string
+
+---@class ColorScheme: Palette
+---@field border string
+---@field border_highlight string
+---@field bg_dark string
+---@field bg_popup string
+---@field bg_statusline string
+---@field bg_sidebar string
+---@field bg_float string
+---@field fg_search string
+---@field diff DiffColors
+---@field git GitColors
+---@field terminal TerminalColors
+
+---@class andromeda.Highlight: vim.api.keyset.highlight
+---@field style? vim.api.keyset.highlight
+
+---@alias andromeda.Highlights table<string,andromeda.Highlight|string>
+---@alias andromeda.HighlightsFn fun(colors: ColorScheme, opts:andromeda.Config):andromeda.Highlights
+
+---@class andromeda.Styles
+---@field comments? {italic?: boolean}
+---@field keywords? {italic?: boolean}
+---@field functions? {bold?: boolean}
+---@field variables? table
+---@field floats? string
+---@field sidebars? string
+
+---@class andromeda.Config
+---@field transparent? boolean
+---@field terminal_colors? boolean
+---@field styles? andromeda.Styles
+---@field on_colors? fun(colors: ColorScheme)
+---@field on_highlights? fun(highlights: andromeda.Highlights, colors: ColorScheme)
+---@field plugins? table<string, boolean|{enabled:boolean}>

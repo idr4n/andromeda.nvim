@@ -1,0 +1,34 @@
+# Andromeda Colors for Alacritty
+
+# Default colors
+[colors.primary]
+background = "#23262E"
+foreground = "#D5CED9"
+
+[colors.cursor]
+cursor     = "#FFFFFF"
+text       = "#23262E"
+
+[colors.selection]
+background = "#3A3E4B"
+text       = "#D5CED9"
+
+[colors.normal]
+black      = "#23262E"
+red        = "#EE5D43"
+green      = "#96E072"
+yellow     = "#FFE66D"
+blue       = "#7CB7FF"
+magenta    = "#F92672"
+cyan       = "#00E8C6"
+white      = "#D5CED9"
+
+[colors.bright]
+black      = "#606064"
+red        = "#FE6B53"
+green      = "#8DF44A"
+yellow     = "#FFF4CE"
+blue       = "#99C4FF"
+magenta    = "#FF4B81"
+cyan       = "#00F8D3"
+white      = "#D5CED9"

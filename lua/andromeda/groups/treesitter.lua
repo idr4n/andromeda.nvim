@@ -1,0 +1,173 @@
+local M = {}
+
+M.url = "https://github.com/nvim-treesitter/nvim-treesitter"
+
+---@type andromeda.HighlightsFn
+---@param c ColorScheme
+---@param opts andromeda.Config
+function M.get(c, opts)
+  -- stylua: ignore
+  return {
+    -- Treesitter Core Highlights
+    ["@annotation"]                   = "PreProc",
+    ["@attribute"]                    = "PreProc",
+    ["@boolean"]                      = { fg = c.red },
+    ["@character"]                    = { fg = c.red },
+    ["@character.special"]            = { fg = c.red, bold = true },  -- Format specifiers in some languages
+    ["@comment"]                      = { fg = c.fg_gutter, style = opts.styles.comments },
+    ["@comment.error"]                = { fg = c.error },
+    ["@comment.hint"]                 = { fg = c.hint },
+    ["@comment.info"]                 = { fg = c.info },
+    ["@comment.note"]                 = { fg = c.hint },
+    ["@comment.todo"]                 = { fg = c.pink },
+    ["@comment.warning"]              = { fg = c.warning },
+    ["@conditional"]                  = { fg = c.purple, style = opts.styles.keywords },
+    ["@constant"]                     = { fg = c.red },
+    ["@constant.builtin"]             = { fg = c.red },
+    ["@constant.macro"]               = { fg = c.cyan },
+    ["@constructor"]                  = { fg = c.yellow },
+    ["@constructor.tsx"]              = { fg = c.yellow },
+    ["@debug"]                        = { fg = c.magenta },
+    ["@define"]                       = { fg = c.purple, style = opts.styles.keywords },
+    ["@diff.delta"]                   = "DiffChange",
+    ["@diff.minus"]                   = "DiffDelete",
+    ["@diff.plus"]                    = "DiffAdd",
+    ["@exception"]                    = { fg = c.purple },
+    ["@field"]                        = { fg = c.cyan },
+    ["@float"]                        = { fg = c.orange },
+    ["@function"]                     = { fg = c.yellow, style = opts.styles.functions },
+    ["@function.builtin"]             = { fg = c.yellow },
+    ["@function.call"]                = { fg = c.yellow },
+    ["@function.macro"]               = { fg = c.yellow },
+    ["@function.method"]              = { fg = c.yellow },
+    ["@function.method.call"]         = { fg = c.yellow },
+    ["@include"]                      = { fg = c.purple, style = opts.styles.keywords },
+    ["@keyword"]                      = { fg = c.purple, style = opts.styles.keywords },
+    ["@keyword.conditional"]          = { fg = c.purple, style = opts.styles.keywords },
+    ["@keyword.coroutine"]            = { fg = c.purple, style = opts.styles.keywords },
+    ["@keyword.debug"]                = "Debug",
+    ["@keyword.directive"]            = "PreProc",
+    ["@keyword.directive.define"]     = "Define",
+    ["@keyword.exception"]            = { fg = c.purple },
+    ["@keyword.function"]             = { fg = c.purple, style = opts.styles.keywords },
+    ["@keyword.import"]               = { fg = c.purple, style = opts.styles.keywords },
+    ["@keyword.operator"]             = { fg = c.red, style = opts.styles.keywords },
+    ["@keyword.repeat"]               = { fg = c.purple, style = opts.styles.keywords },
+    ["@keyword.return"]               = { fg = c.purple, style = opts.styles.keywords },
+    ["@keyword.storage"]              = { fg = c.purple },
+    ["@label"]                        = { fg = c.cyan },
+    ["@macro"]                        = { fg = c.pink },
+    ["@markup"]                       = "@none",
+    ["@markup.emphasis"]              = { italic = true },
+    ["@markup.environment"]           = "Macro",
+    ["@markup.environment.name"]      = "Type",
+    ["@markup.heading"]               = "Title",
+    ["@markup.italic"]                = { italic = true },
+    ["@markup.link"]                  = { fg = c.purple },
+    ["@markup.link.label"]            = "SpecialChar",
+    ["@markup.link.label.symbol"]     = "Identifier",
+    ["@markup.link.url"]              = { fg = c.purple, underline = true },
+    ["@markup.list"]                  = { fg = c.cyan },
+    ["@markup.list.checked"]          = { fg = c.green },
+    ["@markup.list.unchecked"]        = { fg = c.fg_gutter },
+    ["@markup.math"]                  = "Special",
+    ["@markup.raw"]                   = { fg = c.green },
+    ["@markup.raw.markdown_inline"]   = { fg = c.green },
+    ["@markup.strikethrough"]         = { strikethrough = true },
+    ["@markup.strong"]                = { bold = true },
+    ["@markup.underline"]             = { fg = c.green, underline = true },
+    ["@method"]                       = { fg = c.yellow },
+    ["@method.call"]                  = { fg = c.yellow },
+    ["@module"]                       = { fg = c.cyan },
+    ["@module.builtin"]               = { fg = c.cyan },
+    ["@namespace"]                    = { fg = c.cyan },
+    ["@namespace.builtin"]            = { fg = c.pink },
+    ["@none"]                         = { fg = c.red },
+    ["@number"]                       = { fg = c.orange },
+    ["@number.float"]                 = { fg = c.orange },
+    ["@operator"]                     = { fg = c.red, style = opts.styles.keywords },
+    ["@parameter"]                    = { fg = c.cyan },
+    ["@preproc"]                      = { fg = c.fg_gutter, style = opts.styles.comments },
+    ["@property"]                     = { fg = c.pink },
+    ["@punctuation"]                  = { fg = c.fg },
+    ["@punctuation.bracket"]          = { fg = c.yellow },
+    ["@punctuation.delimiter"]        = { fg = c.fg },
+    ["@punctuation.special"]          = { fg = c.red },
+    ["@punctuation.special.markdown"] = { fg = c.orange },
+    ["@repeat"]                       = { fg = c.purple, style = opts.styles.keywords },
+    ["@storageclass"]                 = { fg = c.purple },
+    ["@string"]                       = { fg = c.green },
+    ["@string.documentation"]         = { fg = c.green },
+    ["@string.escape"]                = { fg = c.red, bold = true },  -- Escape sequences like \n, \t
+    ["@string.escape.printf"]         = { fg = c.red, bold = true },  -- Printf format specifiers
+    ["@string.regexp"]                = { fg = c.blue },
+    ["@string.special"]               = { fg = c.red, bold = true },  -- Format specifiers like %d, %s
+    ["@string.special.symbol"]        = { fg = c.red, bold = true },  -- Format specifiers (alternative capture)
+    ["@string.special.path"]          = { fg = c.cyan },  -- File paths in strings
+    ["@structure"]                    = { fg = c.cyan },
+    ["@tag"]                          = { fg = c.magenta },
+    ["@tag.attribute"]                = { fg = c.magenta },
+    ["@tag.delimiter"]                = { fg = c.magenta },
+    ["@tag.builtin"]                  = { fg = c.magenta },
+    ["@tag.tsx"]                      = { fg = c.magenta },
+    ["@tag.javascript"]               = { fg = c.magenta },
+    ["@text"]                         = { fg = c.fg },
+    ["@text.danger"]                  = { fg = c.error },
+    ["@text.diff.add"]                = "DiffAdd",
+    ["@text.diff.delete"]             = "DiffDelete",
+    ["@text.emphasis"]                = { italic = true },
+    ["@text.literal"]                 = { fg = c.green },
+    ["@text.reference"]               = { fg = c.red },
+    ["@text.strike"]                  = { strikethrough = true },
+    ["@text.strong"]                  = { bold = true },
+    ["@text.title"]                   = { fg = c.pink },
+    ["@text.todo"]                    = { fg = c.magenta },
+    ["@text.underline"]               = { fg = c.green, underline = true },
+    ["@text.uri"]                     = { fg = c.purple, underline = true },
+    ["@text.warning"]                 = { fg = c.warning },
+    ["@type"]                         = { fg = c.yellow },
+    ["@type.builtin"]                 = { fg = c.yellow },
+    ["@type.definition"]              = { fg = c.purple },
+    ["@type.qualifier"]               = { fg = c.purple },
+    ["@variable"]                     = { fg = c.cyan, style = opts.styles.variables },
+    ["@variable.builtin"]             = { fg = c.pink },
+    ["@variable.member"]              = { fg = c.cyan },
+    ["@variable.parameter"]           = { fg = c.cyan },
+
+    -- Language-specific overrides
+    -- JavaScript/TypeScript
+    ["@constructor.javascript"]       = { fg = c.yellow },
+    ["@constructor.typescript"]       = { fg = c.yellow },
+    ["@variable.builtin.javascript"]  = { fg = c.pink },
+    ["@variable.builtin.typescript"]  = { fg = c.pink },
+
+    -- C/C++
+    ["@property.c"]                   = { fg = c.cyan },
+    ["@property.cpp"]                 = { fg = c.cyan },
+    ["@type.builtin.c"]               = { fg = c.yellow },
+    ["@type.builtin.cpp"]             = { fg = c.yellow },
+
+    -- HTML
+    ["@tag.html"]                     = { fg = c.magenta },
+    ["@tag.attribute.html"]           = { fg = c.magenta },
+    ["@tag.delimiter.html"]           = { fg = c.magenta },
+    ["@text.title.1.html"]            = { fg = c.pink, bold = true },
+    ["@text.title.2.html"]            = { fg = c.pink, bold = true },
+    ["@text.title.3.html"]            = { fg = c.pink },
+    ["@text.title.4.html"]            = { fg = c.pink },
+    ["@text.title.5.html"]            = { fg = c.pink },
+    ["@text.title.6.html"]            = { fg = c.pink },
+
+    -- Python
+    ["@attribute.python"]             = { fg = c.cyan },
+
+    -- Bash
+    ["@punctuation.special.bash"]     = { fg = c.red },
+
+    -- CSS
+    ["@property.css"]                 = { fg = c.cyan },
+    ["@string.css"]                   = { fg = c.green },
+  }
+end
+
+return M

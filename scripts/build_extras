@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Build terminal theme extras for Andromeda
+
+set -e
+
+# Get the directory where the script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+
+cd "$ROOT_DIR"
+
+echo "Generating terminal theme files..."
+nvim --headless --noplugin -u NONE -c "set rtp+=$ROOT_DIR" -c "lua require('andromeda.extra').setup()" -c "qa"
+
+echo "Done! Terminal themes generated in extras/"
