@@ -155,10 +155,10 @@ function M.get(c, opts)
     healthWarning               = { fg = c.warning },
 
     -- Diff
-    DiffAdd                     = { fg = c.diff.add },
-    DiffChange                  = { fg = c.diff.change },
-    DiffDelete                  = { fg = c.diff.delete },
-    DiffText                    = { fg = c.diff.text },
+    DiffAdd                     = { bg = c.diff.add },
+    DiffChange                  = { bg = c.diff.change },
+    DiffDelete                  = { bg = c.diff.delete },
+    DiffText                    = { bg = c.diff.text },
     diffAdded                   = { fg = c.git.add },
     diffRemoved                 = { fg = c.git.delete },
     diffChanged                 = { fg = c.git.change },
