@@ -135,12 +135,6 @@ function M.get(c, opts)
     ["@variable.parameter"]           = { fg = c.cyan },
 
     -- Language-specific overrides
-    -- JavaScript/TypeScript
-    ["@constructor.javascript"]       = { fg = c.yellow },
-    ["@constructor.typescript"]       = { fg = c.yellow },
-    ["@variable.builtin.javascript"]  = { fg = c.pink },
-    ["@variable.builtin.typescript"]  = { fg = c.pink },
-
     -- C/C++
     ["@property.c"]                   = { fg = c.cyan },
     ["@property.cpp"]                 = { fg = c.cyan },
@@ -149,8 +143,6 @@ function M.get(c, opts)
 
     -- HTML
     ["@tag.html"]                     = { fg = c.magenta },
-    ["@tag.attribute.html"]           = { fg = c.magenta },
-    ["@tag.delimiter.html"]           = { fg = c.magenta },
     ["@text.title.1.html"]            = { fg = c.pink, bold = true },
     ["@text.title.2.html"]            = { fg = c.pink, bold = true },
     ["@text.title.3.html"]            = { fg = c.pink },
