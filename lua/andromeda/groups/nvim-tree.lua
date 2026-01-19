@@ -12,7 +12,7 @@ function M.get(c, opts)
     NvimTreeGitDirty     = { fg = c.git.change },
     NvimTreeGitNew       = { fg = c.git.add },
     NvimTreeImageFile    = { fg = c.fg },
-    NvimTreeIndentMarker = { fg = c.fg_gutter },
+    NvimTreeIndentMarker = { fg = c.bg_search },
     NvimTreeNormal       = { fg = c.fg, bg = c.bg_sidebar },
     NvimTreeNormalNC     = { fg = c.fg, bg = c.bg_sidebar },
     NvimTreeNormalFloat  = { fg = c.fg, bg = c.bg_sidebar },

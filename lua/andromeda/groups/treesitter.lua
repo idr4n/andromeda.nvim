@@ -90,7 +90,7 @@ function M.get(c, opts)
     ["@preproc"]                      = { fg = c.fg_gutter, style = opts.styles.comments },
     ["@property"]                     = { fg = c.pink },
     ["@punctuation"]                  = { fg = c.fg },
-    ["@punctuation.bracket"]          = { fg = c.yellow },
+    ["@punctuation.bracket"]          = { fg = c.fg },
     ["@punctuation.delimiter"]        = { fg = c.fg },
     ["@punctuation.special"]          = { fg = c.red },
     ["@punctuation.special.markdown"] = { fg = c.orange },

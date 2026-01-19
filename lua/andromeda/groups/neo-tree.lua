@@ -10,7 +10,7 @@ function M.get(c, opts)
   local dark = opts.styles.sidebars == "transparent" and c.none or Util.blend_bg(c.bg_sidebar, 0.8)
   -- stylua: ignore
   return {
-    NeoTreeDimText              = { fg = c.fg_gutter },
+    NeoTreeDimText              = { fg = c.bg_search },
     NeoTreeFileName             = { fg = c.fg },
     NeoTreeDirectoryIcon        = { fg = c.blue },
     NeoTreeGitModified          = { fg = c.orange },
