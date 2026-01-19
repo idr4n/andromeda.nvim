@@ -152,6 +152,7 @@ function M.get(c, opts)
 
     -- Python
     ["@attribute.python"]             = { fg = c.cyan },
+    ["@variable.python"]              = { fg = c.fg },
 
     -- Bash
     ["@punctuation.special.bash"]     = { fg = c.red },
