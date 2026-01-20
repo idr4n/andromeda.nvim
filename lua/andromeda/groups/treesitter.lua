@@ -158,8 +158,7 @@ function M.get(c, opts)
     ["@punctuation.special.bash"]     = { fg = c.red },
 
     -- CSS
-    ["@property.css"]                 = { fg = c.cyan },
-    ["@string.css"]                   = { fg = c.green },
+    ["@property.css"]                 = { fg = c.purple },
   }
 end
 
