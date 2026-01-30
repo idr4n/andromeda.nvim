@@ -1,5 +1,3 @@
-local Util = require("andromeda.util")
-
 local M = {}
 
 M.url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
@@ -9,8 +7,8 @@ M.url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
 function M.get(c, opts)
   -- stylua: ignore
   return {
-    TreesitterContext       = { bg = opts.transparent and c.none or Util.blend_bg(c.purple, 0.1) },
-    TreesitterContextBottom = { bg = c.none, underline = opts.transparent, sp = c.magenta },
+    TreesitterContext       = { bg = opts.transparent and c.none or c.bg },
+    TreesitterContextBottom = { bg = c.none, underline = true, sp = c.cyan },
   }
 end
 
