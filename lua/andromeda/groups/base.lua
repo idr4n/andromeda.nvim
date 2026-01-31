@@ -59,7 +59,7 @@ function M.get(c, opts)
     WarningMsg                  = { fg = c.warning },
     MoreMsg                     = { fg = c.info },
     ModeMsg                     = { fg = c.fg_dark },
-    MsgArea                     = { fg = c.fg_dark },
+    MsgArea                     = { fg = c.fg },
     Question                    = { fg = c.fg },
 
     -- Popup Menu
