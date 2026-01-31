@@ -117,7 +117,7 @@ function M.setup(opts)
     cyan = colors.cyan,
     cyan_bright = Util.brighten(colors.cyan),
     white = colors.fg,
-    white_bright = colors.fg,
+    white_bright = colors.bg_visual,
   }
 
   -- Handle transparent background
